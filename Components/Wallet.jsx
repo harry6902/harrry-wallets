@@ -111,17 +111,17 @@ export function Wallet({isDark}){
                 isSeedPhrase  &&
                 <div className="">
                     <div onClick={handleShowPhrase} className="font-bold p-3 cursor-pointer flex justify-between items-c enter border dark:bg-gray-800 border-black/30 dark:border-white/20 shadow-md rounded-md">
-                        <div className="mx-[2vw] text-2xl ">Seed Phrase</div>
-                       {!showPhrase && <div className="mx-[2vw] hover:bg-gray-200 dark:hover:bg-gray-900 p-2 cursor-pointer">∨</div>}
-                       {showPhrase && <div className="mx-[2vw] hover:bg-gray-200 dark:hover:bg-gray-900 p-2 cursor-pointer">∧</div>}
+                        <div className="mx-[10vw] xl:mx-[2vw] text-2xl ">Seed Phrase</div>
+                       {!showPhrase && <div className="mx-[10vw] xl:mx-[2vw] hover:bg-gray-200 dark:hover:bg-gray-900 p-2 cursor-pointer">∨</div>}
+                       {showPhrase && <div className="mx-[10vw] xl:mx-[2vw] hover:bg-gray-200 dark:hover:bg-gray-900 p-2 cursor-pointer">∧</div>}
                     </div>
 
                 </div>
             }
             {
                 showPhrase &&
-                <>
-                <div className="grid grid-cols-4 pt-3 mx-0 xl:mx-auto gap-2">
+                <div className="">
+                <div className="grid grid-cols-2 xl:grid-cols-4 pt-3 mx-auto gap-2">
 
                     {
                         phraseArray.map((ele,index)=>{
@@ -134,10 +134,12 @@ export function Wallet({isDark}){
                     }
                      
                      </div>
-                     <div onClick={handleCopy} className="text-center mt-2 bg-gray-100 dark:bg-gray-900 mx:0 xl:mx-auto w-[15vw] py-2 cursor-pointer">
+                    
+                     <div onClick={handleCopy} className="text-center mt-2 bg-gray-100 dark:bg-gray-900 mx-auto w-fit px-4 py-2 cursor-pointer rounded-md">
                      copy to clipboard
                     </div>
-                     </>
+                    
+                     </div>
             }
             {
                 isSeedPhrase && 
@@ -164,10 +166,10 @@ export function Wallet({isDark}){
                                             handleDeleteWallet(item.id)
                                     }}
                                      className=" absolute top-2 right-2 text-xs p-1 bg-red-700 rounded-sm hover:font-semibold cursor-pointer text-white">Delete</div>
-                                     {!item.showBalance ?<div onClick={()=>{handleShowBalance(item)}} className="absolute bottom-2 right-2 p-1 bg-black text-white dark:bg-white dark:text-black cursor-pointer rounded-md text-xs">
+                                     {!item.showBalance ?<div onClick={()=>{handleShowBalance(item)}} className="absolute bottom-24 right-2 p-1 bg-black text-white dark:bg-white dark:text-black cursor-pointer rounded-md text-xs">
                                             Check Balance
                                      </div>:
-                                     <div className="absolute bottom-2 right-2 p-1 bg-black text-white dark:bg-white dark:text-black cursor-pointer rounded-md text-xs">
+                                     <div className="absolute bottom-24 right-2 p-1 bg-black text-white dark:bg-white dark:text-black cursor-pointer rounded-md text-xs">
                                             <div className="flex gap-1 items-center justify-center">
                                              <div>Balance: {item.balance} Sol</div>
                                               <div onClick={()=>{
