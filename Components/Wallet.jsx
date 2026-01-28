@@ -96,7 +96,7 @@ export function Wallet({isDark}){
     return (
         <div className="mt-20">
             { !isSeedPhrase &&
-            <div className="flex justify-between mx-[10vw]">
+            <div className="flex justify-between mx:0 xl:mx-[10vw]">
                <div onClick={handleGenerateSeedPhrase} className={` ${isSeedPhrase ? "pointer-events-none cursor-not-allowed opacity-50":"cursor-pointer hover:font-semibold"}
                 bg-black text-white dark:bg-white dark:text-black p-3 rounded-md cursor-pointer`}>
                 Generate Seed Phrase
@@ -121,7 +121,7 @@ export function Wallet({isDark}){
             {
                 showPhrase &&
                 <>
-                <div className="grid grid-cols-4 pt-3 mx-auto gap-2">
+                <div className="grid grid-cols-4 pt-3 mx-0 xl:mx-auto gap-2">
 
                     {
                         phraseArray.map((ele,index)=>{
@@ -134,7 +134,7 @@ export function Wallet({isDark}){
                     }
                      
                      </div>
-                     <div onClick={handleCopy} className="text-center mt-2 bg-gray-100 dark:bg-gray-900 mx-auto w-[15vw] py-2 cursor-pointer">
+                     <div onClick={handleCopy} className="text-center mt-2 bg-gray-100 dark:bg-gray-900 mx:0 xl:mx-auto w-[15vw] py-2 cursor-pointer">
                      copy to clipboard
                     </div>
                      </>

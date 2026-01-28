@@ -12,7 +12,7 @@ function App() {
   
     <div className={`${isDark ? "dark" : "light"}`}>
       <div className='min-h-screen bg-primary text-black dark:bg-primary-dark dark:text-white  '>
-       <div className='mx-[25vw]'>
+       <div className='mx-0 xl:mx-[25vw]'>
        <Header isDark={isDark} setIsDark={setIsDark} />
        <Wallet isDark={isDark} />
        </div>
